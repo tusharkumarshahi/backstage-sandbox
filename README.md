@@ -461,7 +461,6 @@ When you open a service in Backstage, you see:
 
 
 
-**Questions?** Open an issue or reach out in #platform-support.
 
 ---
 
