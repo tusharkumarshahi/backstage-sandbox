@@ -1,0 +1,18 @@
+version: "4"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: backstage-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: backstage
+      POSTGRES_PASSWORD: backstage
+      POSTGRES_DB: backstage
+    volumes:
+      - backstage_pgdata:/var/lib/postgresql/data
+
+volumes:
+  backstage_pgdata:

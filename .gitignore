@@ -1,0 +1,63 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# =========================
+# Build outputs
+# =========================
+dist/
+build/
+packages/*/dist
+packages/*/build
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Cache / Temporary
+# =========================
+.cache/
+.tmp/
+coverage/
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Backstage specific
+# =========================
+app-config.local.yaml
+app-config.production.local.yaml
+
+# =========================
+# Docker (if used locally)
+# =========================
+docker-data/

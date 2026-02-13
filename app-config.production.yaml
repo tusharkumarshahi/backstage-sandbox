@@ -1,0 +1,71 @@
+app:
+  title: Scaffolded Backstage App
+  baseUrl: ${APP_BASE_URL}
+
+backend:
+  baseUrl: ${BACKEND_BASE_URL}
+  listen:
+    port: ${BACKEND_PORT}
+  database:
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: ${POSTGRES_DB}
+
+integrations:
+  github:
+    - host: github.com
+      token: ${GITHUB_TOKEN}
+
+proxy:
+  endpoints:
+    '/prometheus/api':
+      target: ${PROMETHEUS_BASE_URL}/api/v1/
+      changeOrigin: true
+      secure: false
+      credentials: dangerously-allow-unauthenticated
+
+    '/grafana/api':
+      target: ${GRAFANA_BASE_URL}
+      headers:
+        Authorization: Bearer ${GRAFANA_TOKEN}
+      changeOrigin: true
+      secure: false
+
+grafana:
+  domain: ${GRAFANA_BASE_URL}
+  unifiedAlerting: true
+
+auth:
+  providers:
+    guest: {}
+    github:
+      development:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
+        signIn:
+          resolvers:
+            - resolver: usernameMatchingUserEntityName
+
+kubernetes:
+  serviceLocatorMethod:
+    type: multiTenant
+  clusterLocatorMethods:
+    - type: config
+      clusters:
+        - name: ${K8S_CLUSTER_NAME}
+          url: ${K8S_CLUSTER_URL}
+          authProvider: serviceAccount
+          skipTLSVerify: true
+          skipMetricsLookup: false
+          serviceAccountToken: ${K8S_SERVICE_ACCOUNT_TOKEN}
+
+sonarqube:
+  baseUrl: ${SONAR_BASE_URL}
+  apiKey: ${SONAR_API_KEY}
+
+open-dora:
+  apiBaseUrl: ${OPEN_DORA_API_BASE_URL}
