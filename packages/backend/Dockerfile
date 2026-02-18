@@ -14,6 +14,8 @@
 
 FROM node:24-trixie-slim
 
+RUN corepack enable && corepack prepare yarn@4.4.1 --activate
+
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
 
