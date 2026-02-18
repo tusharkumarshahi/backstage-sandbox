@@ -63,11 +63,9 @@ import {
 } from '@backstage-community/plugin-github-actions';
 import {
   EntitySonarQubeCard,
-  isSonarQubeAvailable,
 } from '@backstage/plugin-sonarqube';
 import {
   EntityPrometheusContent,
-  EntityPrometheusAlertCard,
 } from '@roadiehq/backstage-plugin-prometheus';
 import {
   EntityGrafanaDashboardsCard,
@@ -76,15 +74,12 @@ import {
 import { DocusaurusEmbed } from '../docusaurus/DocusaurusEmbed';
 import {
   EntityGithubInsightsLanguagesCard,
-  EntityGithubInsightsReadmeCard,
   EntityGithubInsightsReleasesCard,
-  isGithubInsightsAvailable,
 } from '@roadiehq/backstage-plugin-github-insights';
 
 import {
   EntityGithubPullRequestsOverviewCard,
   EntityGithubPullRequestsTable,
-  isGithubPullRequestsAvailable,
 } from '@roadiehq/backstage-plugin-github-pull-requests';
 
 

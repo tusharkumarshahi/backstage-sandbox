@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useEntity } from '@backstage/plugin-catalog-react';
 
 export const DocusaurusEmbed = () => {

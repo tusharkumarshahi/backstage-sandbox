@@ -50,6 +50,6 @@ backend.add(import('@backstage/plugin-notifications-backend'));
 backend.add(import('@backstage/plugin-signals-backend'));
 
 // SonarQube plugin - FIXED IMPORT
-backend.add(import('@backstage/plugin-sonarqube-backend'));
+// backend.add(import('@backstage/plugin-sonarqube-backend'));
 
 backend.start();

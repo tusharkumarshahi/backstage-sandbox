@@ -1,4 +1,4 @@
-import { Navigate, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -43,25 +43,25 @@ import { SignalsDisplay } from '@backstage/plugin-signals';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePage } from './components/home/HomePage';
-import {
-  DefaultTechDocsHome,
-} from '@backstage/plugin-techdocs';
-const AppRoutes = () => {
-  <FlatRoutes>
-    {/* ... other plugin routes */}
-    <Route path="/docs" element={<TechDocsIndexPage />}>
-      <DefaultTechDocsHome />
-    </Route>
-    <Route
-      path="/docs/:namespace/:kind/:name/*"
-      element={<TechDocsReaderPage />}
-    >
-      <TechDocsAddons>
-        <ReportIssue />
-      </TechDocsAddons>
-    </Route>
-  </FlatRoutes>;
-};
+// import {
+//   DefaultTechDocsHome,
+// } from '@backstage/plugin-techdocs';
+// const AppRoutes = () => {
+//   <FlatRoutes>
+//     {/* ... other plugin routes */}
+//     <Route path="/docs" element={<TechDocsIndexPage />}>
+//       <DefaultTechDocsHome />
+//     </Route>
+//     <Route
+//       path="/docs/:namespace/:kind/:name/*"
+//       element={<TechDocsReaderPage />}
+//     >
+//       <TechDocsAddons>
+//         <ReportIssue />
+//       </TechDocsAddons>
+//     </Route>
+//   </FlatRoutes>;
+// };
 
 
 const app = createApp({
